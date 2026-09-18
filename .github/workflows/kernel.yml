@@ -43,9 +43,10 @@ jobs:
       - name: Collect kernel image
         run: |
           cd linux          
-          cp arch/arm64/boot/Image ../Image-arm64
-          cp System.map ../Image-arm64
-          cp .config ../Image-arm64
+          mkdir -p ../Image-arm64
+          cp arch/arm64/boot/Image ../Image-arm64/
+          cp System.map ../Image-arm64/ || true
+          cp .config ../Image-arm64/ || true
           
 
       - name: Compress kernel image (7z)
