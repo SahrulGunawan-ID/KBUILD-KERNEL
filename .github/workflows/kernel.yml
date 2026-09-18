@@ -33,7 +33,7 @@ jobs:
       - name: Configure kernel (allnoconfig)
         run: |
           cd linux
-          make -j4 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- allyesconfig
+          make -j4 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- defconfig
 
       - name: Build kernel Image
         run: |
@@ -42,8 +42,11 @@ jobs:
 
       - name: Collect kernel image
         run: |
-          cd linux
+          cd linux          
           cp arch/arm64/boot/Image ../Image-arm64
+          cp System.map ../Image-arm64
+          cp .config ../Image-arm64
+          
 
       - name: Compress kernel image (7z)
         run: |
