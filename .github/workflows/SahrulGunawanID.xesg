@@ -1,0 +1,13 @@
+[BR MODULE]
+onload=ok
+loaded=no
+checkfile=no
+checksum=yes
+
+[BOOT TIME]
+localboot=yes
+fastmode=yes
+replay=no
+
+[END TABLE]
+// BY SAHRUL GUNAWAN ID
